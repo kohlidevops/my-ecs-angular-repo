@@ -18,8 +18,8 @@ RUN npm install && ng build -c production
 
 
 # STAGE 2: Build the final deployable image
-# FROM public.ecr.aws/docker/library/nginx:1.25
-FROM public.ecr.aws/docker/library/ubuntu
+FROM public.ecr.aws/docker/library/nginx:1.25
+# FROM public.ecr.aws/docker/library/ubuntu
 
 # Allow the HTTP port needed by the Nginx server for connections
 EXPOSE 80
