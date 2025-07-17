@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1
 
 # STAGE 1: Build the Angular project
-FROM node:20 AS builder
+FROM public.ecr.aws/docker/library/node:20 AS builder
 
 # Install Angular CLI
 RUN npm install -g @angular/cli@17
@@ -18,7 +18,7 @@ RUN npm install && ng build -c production
 
 
 # STAGE 2: Build the final deployable image
-FROM nginx:1.25
+FROM public.ecr.aws/docker/library/nginx:1.25
 
 # Allow the HTTP port needed by the Nginx server for connections
 EXPOSE 80
